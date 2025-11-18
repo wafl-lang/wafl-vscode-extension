@@ -59,7 +59,7 @@
     "tags": {
       "patterns": [
         {
-          "name": "entity.name.tag.wafl",
+          "name": "constant.language.tag.wafl",
           "match": "![a-zA-Z_][a-zA-Z0-9_-]*\\b"
         }
       ]
@@ -67,12 +67,20 @@
     "keys": {
       "patterns": [
         {
-          "name": "entity.name.function.wafl",
-          "match": "^\\s*([a-zA-Z_][a-zA-Z0-9_-]*)(<[a-zA-Z0-9_]+>)?\\s*:"
+          "match": "^\\s*([a-zA-Z_][a-zA-Z0-9_-]*)(<([a-zA-Z0-9_]+)>)?\\s*:",
+          "captures": {
+            "1": { "name": "constant.other.key.wafl" },
+            "2": { "name": "punctuation.definition.generic.wafl" },
+            "3": { "name": "entity.name.type.wafl" }
+          }
         },
         {
-          "name": "entity.name.function.wafl",
-          "match": "\\s+([a-zA-Z_][a-zA-Z0-9_-]*)(<[a-zA-Z0-9_]+>)?\\s*:"
+          "match": "\\s+([a-zA-Z_][a-zA-Z0-9_-]*)(<([a-zA-Z0-9_]+)>)?\\s*:",
+          "captures": {
+            "1": { "name": "constant.other.key.wafl" },
+            "2": { "name": "punctuation.definition.generic.wafl" },
+            "3": { "name": "entity.name.type.wafl" }
+          }
         }
       ]
     },
@@ -124,7 +132,7 @@
     "expressions": {
       "patterns": [
         {
-          "name": "variable.other.env.wafl",
+          "name": "constant.language.environment.wafl",
           "match": "\\$[A-Z][A-Z0-9_]*(?:\\.[A-Z0-9_]+)*"
         },
         {

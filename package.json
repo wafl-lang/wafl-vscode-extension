@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "publisher": "wafl",
   "license": "MIT",
-  "icon": "./assets/extension-icon-dark.png",
+  "icon": "./assets/extension-icon-light.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/wafl-lang/wafl-vscode-extension.git"

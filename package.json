@@ -1,0 +1,61 @@
+{
+  "name": "wafl-language-support",
+  "displayName": "WAFL Language Support",
+  "description": "Syntax highlighting and language support for .wafl configuration files",
+  "version": "0.1.0",
+  "publisher": "wafl",
+  "license": "MIT",
+  "icon": "./assets/extension-icon-dark.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wafl-lang/wafl-vscode-extension.git"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "wafl",
+    "config",
+    "configuration",
+    "yaml",
+    "dsl",
+    "schema",
+    "templating",
+    "environment",
+    "yaml-alternative"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wafl",
+        "aliases": [
+          "WAFL",
+          "wafl"
+        ],
+        "extensions": [
+          ".wafl"
+        ],
+        "configuration": "./src/language-configuration.json",
+        "icon": {
+          "light": "./assets/language-icon-light.png",
+          "dark": "./assets/language-icon-dark.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wafl",
+        "scopeName": "source.wafl",
+        "path": "./src/syntaxes/wafl.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "mkdir -p build && vsce package --out build",
+    "build": "npm run package",
+    "publish": "vsce publish"
+  }
+}
